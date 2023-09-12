@@ -34,12 +34,12 @@ function eraseText(length) {
     }, 30);
   } else {
     setTimeout(function () {
-      typeWriter("I am using Arch linux BTW :)", 0);
+      typeWriter("I am using Archlinux BTW :)", 0);
     }, 1000);
   }
 }
 
-typeWriter("I am using Arch linux BTW :)", 0);
+typeWriter("I am using Archlinux BTW :)", 0);
 
 
 

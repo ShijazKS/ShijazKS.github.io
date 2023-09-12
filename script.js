@@ -42,3 +42,4 @@ function eraseText(length) {
 typeWriter("I am using Arch linux BTW :)", 0);
 
 
+

@@ -1,22 +1,51 @@
 body {
-    background-color: #040d12;
-    color: #93b1a6;
-    cursor: none;
+    /* background-color: #040d12; */
+    /* background-color: #040d12; */
+    /* color: #93b1a6; */
+    /* cursor: none; */
+    height: 100%;
   }
 
-
-  /* cursor */
-  .circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 24px;
-    background-color: black;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999; 
+  .rubik-head {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
   }
 
-/* button */
-  
+  .search-bar {
+    background-color: #ffffff; /* White background */
+    box-shadow:  0 4px 6px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.05); /* Uniform shadow */
+    border-radius: 50px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    padding: 10px 18px; /* Padding inside the bar */
+    width: 60%; /* Set a fixed width */
+    max-width: 500px; /* Limit max width */
+  }
+
+  .search-bar i {
+    color: #9ca3af; /* Icon color */
+    margin-right: 10px; /* Space between icon and input */
+  }
+
+  .search-bar input {
+    flex: 1; /* Make input take up available space */
+    border: none; /* Remove default border */
+    outline: none; /* Remove focus outline */
+    font-size: 16px; /* Adjust font size */
+    color: #4b5563; /* Text color */
+    margin-right: 10px; /* Add space between input and button */
+  }
+
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af; /* Button icon color */
+  }
+
+  .search-bar button svg {
+    width: 20px;
+    height: 20px;
+  }

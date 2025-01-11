@@ -1,51 +1,92 @@
 body {
-    /* background-color: #040d12; */
-    /* background-color: #040d12; */
-    /* color: #93b1a6; */
-    /* cursor: none; */
-    height: 100%;
-  }
+  /* background-color: #040d12; */
+  height: 100%;
+}
 
-  .rubik-head {
-    font-family: "Rubik", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-  }
+.rubik-head {
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
 
-  .search-bar {
-    background-color: #ffffff; /* White background */
-    box-shadow:  0 4px 6px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.05); /* Uniform shadow */
-    border-radius: 50px; /* Rounded corners */
-    display: flex;
-    align-items: center;
-    padding: 10px 18px; /* Padding inside the bar */
-    width: 60%; /* Set a fixed width */
-    max-width: 500px; /* Limit max width */
-  }
+.search-container {
+  width: 60%;
+  max-width: 500px;
+  border-radius: 20px;
+  position: relative; /* To position the suggestions */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
+}
 
-  .search-bar i {
-    color: #9ca3af; /* Icon color */
-    margin-right: 10px; /* Space between icon and input */
-  }
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-  .search-bar input {
-    flex: 1; /* Make input take up available space */
-    border: none; /* Remove default border */
-    outline: none; /* Remove focus outline */
-    font-size: 16px; /* Adjust font size */
-    color: #4b5563; /* Text color */
-    margin-right: 10px; /* Add space between input and button */
-  }
+.search-bar i {
+  color: #9ca3af; 
+  margin-right: 10px;
+}
 
-  .search-bar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #9ca3af; /* Button icon color */
-  }
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #4b5563;
+}
 
-  .search-bar button svg {
-    width: 20px;
-    height: 20px;
-  }
+.search-bar .fa-microphone {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.suggestions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the search bar */
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.suggestions li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f9fafb;
+}
+.suggestions li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f9fafb;
+}
+
+.search-container.active {
+  border-radius: 10px 10px 0 0;
+}
+
+.sitelink {
+  color: blue;
+  font-weight: 500;
+  font-size: smaller;
+}
+
+.sitehead {
+  font-weight: 500;
+  font-size: smaller;
+}

@@ -17,18 +17,24 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="flex flex-col min-h-screen">
     <div class="h-14 flex items-center justify-between px-6">
       <div class="flex space-x-4">
-        <h3>about</h3>
-        <h3>github</h3>
+        <h3>About</h3>
+        <h3>Github</h3>
       </div>
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 items-center">
         <h3>Gmail</h3>
         <h3>Contact</h3>
+        <a href="https://shijazks.vercel.app">
+          <img class="w-10 h-10" src="jaz.jpg" alt="" />
+        </a>
       </div>
     </div>
 
@@ -44,33 +50,55 @@
       </div>
 
       <!-- serach bar -->
-      <div class="search-bar mt-6 border">
-        <i class="fas fa-search "></i> 
-        <input type="text" placeholder="Search for my Projects :)">
-        <!-- <i class="fa-regular fa-magnifying-glass"></i> -->
-        <i class="fa-solid fa-microphone"></i>
+      <div class="search-container mt-6" id="search-container">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search for my Projects :)" id="search-input">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+        <ul class="suggestions" id="suggestions">
+          <hr class="mx-4">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
       </div>
 
       <!-- buttons -->
       <div class="flex mt-4 justify-center text-center space-x-2">
-          <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
-            <h3>Github</h3>
-          </div>
-          <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
-            <h3>Resume</h3>
-          </div>
+        <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
+          <h3>LinkedIn</h3>
+        </div>
+        <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
+          <h3>Resume</h3>
+        </div>
       </div>
 
       <!-- skills -->
-      <div class=" w-fit text-sm mt-4">
-        <h5>about me: </h5>
-        <p></p>
+      <div class=" flex w-fit text-sm mt-4 space-x-2 font-light mb-32">
+        <h5 class="sitehead">Acquired skils:</h5>
+        <a href="#" class="sitelink hover:underline">Nextjs</a>
+        <a href="#" class="sitelink hover:underline">TailwindCss</a>
+        <a href="#" class="sitelink hover:underline">Mern Stack</a>
+        <a href="#" class="sitelink hover:underline">Flask</a>
+        <a href="#" class="sitelink hover:underline">RedisDB</a>
+       
       </div>
     </div>
 
     <!-- footer -->
-    <div class="h-20 bg-zinc-100 ">
-      Footer (Fixed Height)
+    <div class="h-20 bg-zinc-100 text-sm text-slate-800">
+      <h3 class="py-2 px-4">India</h3>
+      <hr />
+      <div class="flex justify-center pt-3 space-x-3">
+        <!-- <h3>DarkMode: <span>off</span></h3> -->
+        <h3>LinkedIn</h3>
+        <h3>Leetcode</h3>
+        <h3>Chess</h3>
+        <h3>Instagram</h3>
+      </div>
     </div>
 
     <script src="script.js"></script>

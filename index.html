@@ -26,11 +26,17 @@
   <body class="flex flex-col min-h-screen">
     <div class="h-14 flex items-center justify-between px-6">
       <div class="flex space-x-4">
-        <h3>About</h3>
-        <h3>Github</h3>
+        <a href="https://shijazks.vercel.app/">
+          <h3>About</h3>
+        </a>
+        <a href="https://github.com/ShijazKS">
+          <h3>Github</h3>
+        </a>
       </div>
       <div class="flex space-x-4 items-center">
-        <h3>Gmail</h3>
+        <a href="mailto:hafizshijaz@gmail.com" target="_blank">
+          <h3>Gmail</h3>
+        </a>
         <h3>Contact</h3>
         <a href="https://shijazks.vercel.app">
           <img class="w-10 h-10" src="jaz.jpg" alt="" />
@@ -53,23 +59,44 @@
       <div class="search-container mt-6" id="search-container">
         <div class="search-bar">
           <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search for my Projects :)" id="search-input">
+          <input
+            type="text"
+            placeholder="Search for my Projects :)"
+            id="search-input"
+          />
           <i class="fa-solid fa-microphone"></i>
         </div>
-        <ul class="suggestions" id="suggestions">
-          <hr class="mx-4">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+        <ul class="suggestions pb-4" id="suggestions">
+          <hr class="mx-4 pb-2" />
+          <li class="flex items-center text-sm">
+            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
+            <h4 class="text-purple-700 font-medium">Dot Connect</h4>
+          </li>
+          <li class="flex items-center text-sm">
+            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
+            <h4 class="text-purple-700 font-medium">Open Talk</h4>
+          </li>
+          <li class="flex items-center text-sm">
+            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
+            <h4 class="text-purple-700 font-medium">Imaginfy</h4>
+          </li>
+          <li class="flex items-center text-sm">
+            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
+            <h4 class="text-purple-700 font-medium">CheXcare</h4>
+          </li>
+          <li class="flex items-center text-sm">
+            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
+            <h4 class="text-purple-700 font-medium">Treasure Hunt</h4>
+          </li>
         </ul>
       </div>
 
       <!-- buttons -->
       <div class="flex mt-4 justify-center text-center space-x-2">
         <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
-          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/shijaz-ks/">
+            <h3>LinkedIn</h3>
+          </a>
         </div>
         <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
           <h3>Resume</h3>
@@ -77,27 +104,28 @@
       </div>
 
       <!-- skills -->
-      <div class=" flex w-fit text-sm mt-4 space-x-2 font-light mb-32">
+      <div class="flex w-fit text-sm mt-4 space-x-2 font-light mb-32">
         <h5 class="sitehead">Acquired skils:</h5>
         <a href="#" class="sitelink hover:underline">Nextjs</a>
         <a href="#" class="sitelink hover:underline">TailwindCss</a>
         <a href="#" class="sitelink hover:underline">Mern Stack</a>
         <a href="#" class="sitelink hover:underline">Flask</a>
         <a href="#" class="sitelink hover:underline">RedisDB</a>
-       
       </div>
     </div>
 
     <!-- footer -->
     <div class="h-20 bg-zinc-100 text-sm text-slate-800">
       <h3 class="py-2 px-4">India</h3>
+      <!-- <h3>DarkMode: <span>off</span></h3> -->
       <hr />
       <div class="flex justify-center pt-3 space-x-3">
-        <!-- <h3>DarkMode: <span>off</span></h3> -->
-        <h3>LinkedIn</h3>
-        <h3>Leetcode</h3>
-        <h3>Chess</h3>
-        <h3>Instagram</h3>
+       <a href="https://leetcode.com/shijaz/"><h3>Leetcode</h3></a>
+       <a href="https://twitter.com/shijaz-ks/"><h3>Twitter</h3></a>
+       <a href="https://www.instagram.com/shijaz_ks/"><h3>Instagram</h3></a>
+       <a href="https://www.chess.com/member/shijazks"><h3>Chess</h3></a>
+       <a href="https://www.hackerrank.com/shijaz"><h3>Hackerrank</h3></a>
+       <a href="https://www.sololearn.com/Profile/18750958/"><h3>Sololearn</h3></a>
       </div>
     </div>
 

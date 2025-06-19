@@ -1,134 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shijaz KS</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JazBlog</title>
 
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Rubik", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 
-  <body class="flex flex-col min-h-screen">
-    <div class="h-14 flex items-center justify-between px-6">
-      <div class="flex space-x-4">
-        <a href="https://shijazks.vercel.app/">
-          <h3>About</h3>
-        </a>
-        <a href="https://github.com/ShijazKS">
-          <h3>Github</h3>
-        </a>
-      </div>
-      <div class="flex space-x-4 items-center">
-        <a href="mailto:hafizshijaz@gmail.com" target="_blank">
-          <h3>Gmail</h3>
-        </a>
-        <h3>Contact</h3>
-        <a href="https://shijazks.vercel.app">
-          <img class="w-10 h-10" src="jaz.jpg" alt="" />
-        </a>
-      </div>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col min-h-screen bg-[#F0F1C5] dark:bg-slate-950 text-emerald-950 dark:text-gray-100 font-sans">
+  <!-- Header -->
+  <header class="w-full py-6 pb-8">
+    <div class="max-w-5xl mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold">JazBlog</h1>
+      <button
+        onclick="toggleDarkMode()"
+        class="text-xl py-2 px-[12px] rounded-full bg-[#BBD8A3] dark:bg-slate-700 hover:bg-emerald-900 hover:text-[#BBD8A3] dark:hover:bg-slate-800 dark:hover:text-slate-950"
+        title="Toggle dark mode"
+      >
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </div>
+  </header>
 
-    <!-- name -->
-    <div class="flex-grow flex flex-col items-center justify-center">
-      <div class="uppercase text-7xl rubik-head flex">
-        <h2 class="font-bold text-blue-500">S</h2>
-        <h2 class="font-bold text-red-500">h</h2>
-        <h2 class="font-bold text-amber-400">i</h2>
-        <h2 class="font-bold text-blue-500">j</h2>
-        <h2 class="font-bold text-green-500">a</h2>
-        <h2 class="font-bold text-red-500">z</h2>
-      </div>
+  <!-- Search Bar -->
+  <div class="mt-6 flex justify-center items-center gap-2 px-4">
+    <input
+      id="searchBar"
+      type="text"
+      placeholder="Search posts..."
+      class="w-full max-w-lg px-4 py-2 rounded-md border-2 shadow-lg border-[#6F826A] bg-[#F0F1C5] focus:outline-none focus:ring focus:ring-[#6F826A] dark:bg-gray-800 dark:border-gray-600 dark:text-white placeholder-[#6F826A] dark:placeholder-slate-500"
+    />
+  </div>
 
-      <!-- serach bar -->
-      <div class="search-container mt-6" id="search-container">
-        <div class="search-bar">
-          <i class="fas fa-search"></i>
-          <input
-            type="text"
-            placeholder="Search for my Projects :)"
-            id="search-input"
-          />
-          <i class="fa-solid fa-microphone"></i>
-        </div>
-        <ul class="suggestions pb-4" id="suggestions">
-          <hr class="mx-4 pb-2" />
-          <li class="flex items-center text-sm">
-            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
-            <h4 class="text-purple-700 font-medium">Dot Connect</h4>
-          </li>
-          <li class="flex items-center text-sm">
-            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
-            <h4 class="text-purple-700 font-medium">Open Talk</h4>
-          </li>
-          <li class="flex items-center text-sm">
-            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
-            <h4 class="text-purple-700 font-medium">Imaginfy</h4>
-          </li>
-          <li class="flex items-center text-sm">
-            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
-            <h4 class="text-purple-700 font-medium">CheXcare</h4>
-          </li>
-          <li class="flex items-center text-sm">
-            <i class="fa-regular fa-clock pr-4 text-slate-400"></i>
-            <h4 class="text-purple-700 font-medium">Treasure Hunt</h4>
-          </li>
-        </ul>
-      </div>
+  <!-- Blog Post List -->
+  <main class="max-w-3xl mx-auto px-4 pb-10 w-full">
+    <ul id="postList" class="space-y-6 mt-10">
+      <!-- Posts will be inserted here dynamically -->
+    </ul>
+  </main>
 
-      <!-- buttons -->
-      <div class="flex mt-4 justify-center text-center space-x-2">
-        <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
-          <a href="https://www.linkedin.com/in/shijaz-ks/">
-            <h3>LinkedIn</h3>
-          </a>
-        </div>
-        <div class="h-8 w-24 bg-slate-100 py-1 rounded-md">
-          <h3>Resume</h3>
-        </div>
-      </div>
+  <!-- Footer -->
+  <footer class="text-center text-sm text-[#BF9264] dark:text-slate-800 py-6 mt-auto">
+    &copy; 2025 JazBlog. Built with Care and Markdown.
+  </footer>
 
-      <!-- skills -->
-      <div class="flex w-fit text-sm mt-4 space-x-2 font-light mb-32">
-        <h5 class="sitehead">Acquired skils:</h5>
-        <a href="#" class="sitelink hover:underline">Nextjs</a>
-        <a href="#" class="sitelink hover:underline">TailwindCss</a>
-        <a href="#" class="sitelink hover:underline">Mern Stack</a>
-        <a href="#" class="sitelink hover:underline">Flask</a>
-        <a href="#" class="sitelink hover:underline">RedisDB</a>
-      </div>
-    </div>
+  <!-- Script -->
+  <script>
+    function toggleDarkMode() {
+      const root = document.documentElement;
+      root.classList.toggle("dark");
+      localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+    }
 
-    <!-- footer -->
-    <div class="h-20 bg-zinc-100 text-sm text-slate-800">
-      <h3 class="py-2 px-4">India</h3>
-      <!-- <h3>DarkMode: <span>off</span></h3> -->
-      <hr />
-      <div class="flex justify-center pt-3 space-x-3">
-       <a href="https://leetcode.com/shijaz/"><h3>Leetcode</h3></a>
-       <a href="https://twitter.com/shijaz-ks/"><h3>Twitter</h3></a>
-       <a href="https://www.instagram.com/shijaz_ks/"><h3>Instagram</h3></a>
-       <a href="https://www.chess.com/member/shijazks"><h3>Chess</h3></a>
-       <a href="https://www.hackerrank.com/shijaz"><h3>Hackerrank</h3></a>
-       <a href="https://www.sololearn.com/Profile/18750958/"><h3>Sololearn</h3></a>
-      </div>
-    </div>
+    window.onload = function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
 
-    <script src="script.js"></script>
-  </body>
+    fetch("posts/posts.json")
+      .then((res) => res.json())
+      .then((posts) => {
+        const list = document.getElementById("postList");
+        const searchBar = document.getElementById("searchBar");
+
+        function renderPosts(filter = "") {
+          list.innerHTML = "";
+          posts
+            .filter((post) =>
+              post.title.toLowerCase().includes(filter.toLowerCase())
+            )
+            .forEach((post) => {
+              const li = document.createElement("li");
+              li.innerHTML = `
+                <a href="post.html?slug=${post.slug}" class="block border-l-4 border-emerald-900 dark:border-slate-300 pl-4 py-2 bg-[#AEC8A4] dark:bg-slate-700 hover:bg-[#6F826A] dark:hover:bg-gray-900 rounded">
+                  <div class="flex flex-col">
+                    <h2 class="text-xl font-semibold text-emerald-950 dark:text-slate-300">${post.title}</h2>
+                    <span class="text-sm text-[#5E6749] dark:text-slate-400 mt-1">${post.time || ""}</span>
+                  </div>
+                </a>
+              `;
+              list.appendChild(li);
+            });
+        }
+
+        renderPosts();
+
+        searchBar.addEventListener("input", (e) => {
+          renderPosts(e.target.value);
+        });
+      })
+      .catch((err) => {
+        document.getElementById("postList").innerHTML = '<li class="text-red-500">Failed to load blog posts.</li>';
+      });
+  </script>
+</body>
 </html>

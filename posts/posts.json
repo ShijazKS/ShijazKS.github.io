@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Making AI Make Sense: A Gentle Introduction to Explainable AI",
+    "file": "posts/explainable-ai.md",
+    "slug": "explainable-ai",
+    "time": "18 June, 2025"
+  },
+  {
+    "title": "SHAP vs LIME — What’s the Difference?",
+    "file": "posts/shap-vs-lime.md",
+    "slug": "shap-vs-lime",
+    "time": "20 June, 2025"
+  },
+  {
+    "title": "What Are Neural Networks and Why Are They So Powerful?",
+    "file": "posts/neural-networks.md",
+    "slug": "neural-networks",
+    "time": "22 June, 2025"
+  }
+]

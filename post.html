@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!-- Tailwind CSS with Typography -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Rubik", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Icons and Fonts -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+      :root:not(.dark) .prose {
+        --tw-prose-bullets: #3b3b3b;
+        --tw-prose-hr: #6f826a;
+        --tw-prose-strong: #1a1a1a;
+        --tw-prose-quotes: #444;
+        --tw-prose-quote-borders: #6f826a;
+        --tw-prose-headings: #222;
+        --tw-prose-links: #004b61;
+        --tw-prose-code: #2b2b2b;
+        --tw-prose-pre-bg: #e8e8e8;
+        --tw-prose-pre-code: #2b2b2b;
+        --tw-prose-thead: #333;
+        --tw-prose-th-borders: #666;
+        --tw-prose-td-borders: #999;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#F0F1C5] dark:bg-slate-950 text-emerald-950 dark:text-gray-100 font-sans flex flex-col min-h-screen"
+  >
+    <!-- Header -->
+    <header class="w-full py-6 pb-4">
+      <div class="max-w-5xl mx-auto flex justify-between items-center px-4">
+        <h1 class="text-3xl font-bold"><a href="index.html">JazBlog</a></h1>
+        <button
+          onclick="toggleDarkMode()"
+          class="text-xl py-2 px-[12px] rounded-full bg-[#BBD8A3] dark:bg-slate-700 hover:bg-emerald-900 hover:text-[#BBD8A3] dark:hover:bg-slate-800 dark:hover:text-slate-950"
+          title="Toggle dark mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-6 w-full flex-grow">
+      <!-- Metadata -->
+      <div id="post-meta" class="mb-6 text-center">
+        <!-- <h2 id="post-title" class="text-3xl font-bold mb-1"></h2> -->
+        <p
+          id="post-time"
+          class="text-sm text-[#5E6749] dark:text-slate-400"
+        ></p>
+      </div>
+
+      <!-- Markdown Content -->
+      <div id="content" class="prose lg:prose-xl max-w-none dark:prose-invert">
+        Loading post...
+      </div>
+
+      <!-- Divider -->
+      <hr
+        class="border-t border-[#6F826A] dark:border-slate-500 mt-6 mx-auto w-2/3"
+      />
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-[#BF9264] dark:text-slate-800 py-6">
+      &copy; 2025 JazBlog. Built with Care and Markdown.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      function toggleDarkMode() {
+        const root = document.documentElement;
+        root.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          root.classList.contains("dark") ? "dark" : "light"
+        );
+      }
+
+      // Apply theme on load
+      window.onload = () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get("slug");
+
+        if (!slug) {
+          document.getElementById("content").innerHTML =
+            '<p class="text-red-500">No post specified.</p>';
+          return;
+        }
+
+        // Fetch post metadata
+        fetch("posts/posts.json")
+          .then((res) => res.json())
+          .then((posts) => {
+            const post = posts.find((p) => p.slug === slug);
+            if (!post) throw new Error("Post not found");
+            //   document.getElementById("post-title").textContent = post.title || "Untitled Post";
+            document.getElementById("post-time").textContent = post.time || "";
+
+            return fetch(post.file);
+          })
+          .then((res) => {
+            if (!res.ok) throw new Error("Markdown file not found");
+            return res.text();
+          })
+          .then((md) => {
+            document.getElementById("content").innerHTML = marked.parse(md);
+          })
+          .catch((err) => {
+            document.getElementById("content").innerHTML = `
+            <p class="text-red-500 text-2xl text-center">
+                File Not Found !
+                </p>`;
+            // ❌ Failed to load post.<br>Error: ${err.message}
+          });
+      };
+    </script>
+  </body>
+</html>

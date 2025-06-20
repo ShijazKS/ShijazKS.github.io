@@ -2,7 +2,7 @@
 
 Artificial Intelligence is no longer science fiction — it's in our phones, our shopping apps, our healthcare systems, and even in our cars. But as AI systems become more powerful and widespread, a new question has become increasingly important:
 
-> **“How do we trust what we don’t understand?”**
+> **How do we trust what we don’t understand?**
 
 Imagine a doctor using an AI system to help diagnose patients. If the AI says, “This X-ray shows signs of pneumonia,” wouldn’t the doctor (and the patient!) want to know why?  
 Similarly, if a loan application gets rejected by an AI model, shouldn’t the applicant have the right to understand the reasoning behind it?
@@ -18,7 +18,7 @@ That’s where **Explainable AI (XAI)** comes in.
 In simple terms, it's about building AI systems that don’t just give you answers — they also explain themselves.  
 Like a student showing their work in a math exam, or a GPS telling you not just where to go, but why it chose that route.
 
----
+
 
 ## 🕵️ Why Do We Need AI to Explain Itself?
 
@@ -32,7 +32,7 @@ Let’s consider a few real-world examples:
 Without explanations, AI can feel like a "black box" — giving results with no way to inspect or question them.  
 That's risky, especially in high-stakes decisions.
 
----
+
 
 ## 🔍 How Do We Make AI Explainable?
 
@@ -51,15 +51,10 @@ Think of it like this:
 - Transparent models are like teachers writing on a whiteboard.  
 - Black-box models need an interpreter — someone to translate their logic to humans.
 
----
+
 
 ## 🌱 Wrap-up
 
 Explainable AI isn’t just a nice-to-have — it’s essential for building **trust**, avoiding **bias**, and making sure that **humans stay in control** of decisions that affect our lives.
-
-In the next parts of this series, we’ll explore:
-- Popular techniques like **SHAP**, **LIME**, and **saliency maps**
-- Real-world use cases of XAI
-- Limitations and challenges
 
 Because the future isn’t just about smart machines — it’s about machines we can trust.

@@ -4,7 +4,7 @@ When building machine learning models, it's not enough to get accurate predictio
 
 Two of the most popular tools for explaining black-box models are **SHAP** and **LIME**. Both aim to answer the same question:
 
-> "Which features influenced this prediction, and by how much?"
+> Which features influenced this prediction, and by how much?
 
 But while their goals are similar, their methods — and what they tell you — can be quite different.
 

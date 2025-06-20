@@ -1,20 +1,51 @@
 [
   {
+    "id": 1,
     "title": "Making AI Make Sense: A Gentle Introduction to Explainable AI",
     "file": "posts/explainable-ai.md",
     "slug": "explainable-ai",
     "time": "18 June, 2025"
   },
   {
+    "id": 2,
     "title": "SHAP vs LIME — What’s the Difference?",
     "file": "posts/shap-vs-lime.md",
     "slug": "shap-vs-lime",
     "time": "20 June, 2025"
   },
   {
+    "id": 3,
     "title": "What Are Neural Networks and Why Are They So Powerful?",
     "file": "posts/neural-networks.md",
     "slug": "neural-networks",
     "time": "22 June, 2025"
+  },
+  {
+    "id": 4,
+    "title": "Can AI Ever Truly 'Explain' Itself? Or Are We Fooling Ourselves?",
+    "file": "posts/can-ai-explain-itself.md",
+    "slug": "can-ai-explain-itself",
+    "time": "24 June, 2025"
+  },
+  {
+    "id": 5,
+    "title": "From Prediction to Responsibility: Who’s Accountable When AI Fails?",
+    "file": "posts/when-ai-fails.md",
+    "slug": "when-ai-fails",
+    "time": "26 June, 2025"
+  },
+  {
+    "id": 6,
+    "title": "XAI in the News: When Explanations Could Have Prevented Disaster",
+    "file": "posts/xai-in-news.md",
+    "slug": "xai-in-news",
+    "time": "28 June, 2025"
+  },
+  {
+    "id": 7,
+    "title": "The EU AI Act and the Rise of the “Right to Explanation”",
+    "file": "posts/eu-ai-act.md",
+    "slug": "eu-ai-act",
+    "time": "30 June, 2025"
   }
 ]
